@@ -14,11 +14,19 @@
     - dotmatrix
     - isometric1
     - letters
-    - 
+    - slant
 """
-
-
+import os
+import sys
 import pyfiglet
   
-result = pyfiglet.figlet_format("DATA-BIT", font = "slant"  )
+output = ''
+root = f'{os.getcwd()}\main.py'
+for i in sys.argv:
+    output += i
+
+output = output.replace(root, '')
+result = pyfiglet.figlet_format(output, font = 'slant')
 print(result)
+
+
